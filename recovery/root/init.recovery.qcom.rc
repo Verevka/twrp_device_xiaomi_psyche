@@ -48,6 +48,9 @@ on init
 on boot
     start health-hal-2-1
 
+    chmod 0755 /system/bin/healthy-boot.sh
+    start healthy-boot
+
     chmod 0755 /system/bin/set-timestamp.sh
     start set-timestamp
 
@@ -94,6 +97,13 @@ service variant-script /system/bin/variant-script.sh
     seclabel u:r:recovery:s0
 
 service set-timestamp /system/bin/set-timestamp.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service healthy-boot /system/bin/healthy-boot.sh
     user root
     group root
     disabled
