@@ -90,3 +90,10 @@ service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service
     user system
     group system input
     seclabel u:r:recovery:s0
+
+service healthy-boot /system/bin/healthy-boot.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
