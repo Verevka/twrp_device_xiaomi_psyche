@@ -152,6 +152,7 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # TWRP specific build flags
+TW_DEVICE_VERSION := HDzungx
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
