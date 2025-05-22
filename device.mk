@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
 	android.hardware.fastboot@1.0-impl-mock.recovery \
 	fastbootd
 
+# FUSE passthrough
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
+
 # Qcom decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
