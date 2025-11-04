@@ -56,3 +56,11 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+#--------------------------
+# to work around a (hash verification) ROM flashing error caused by crDroid+NikGapps on alioth
+# (see the edits in update_engine's payload_consumer/filesystem_verifier_action.cc -
+# ro.virtual_ab.skip_verify_source_hash=true)
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.virtual_ab.skip_verify_source_hash=true
+#--------------------------
+#
