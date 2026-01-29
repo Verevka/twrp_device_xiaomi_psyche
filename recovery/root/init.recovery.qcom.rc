@@ -48,6 +48,8 @@ on init
 on boot
     start health-hal-2-1
 
+    start vendor.qti.vibrator
+
     chmod 0755 /system/bin/healthy-boot.sh
     start healthy-boot
 
@@ -108,4 +110,10 @@ service healthy-boot /system/bin/healthy-boot.sh
     group root
     disabled
     oneshot
+    seclabel u:r:recovery:s0
+
+service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service
+    class hal
+    user system
+    group system input
     seclabel u:r:recovery:s0
