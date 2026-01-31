@@ -1,5 +1,5 @@
-# Android device tree for Redmi 22021211RC (munch)
+# Android device tree for Xiaomi12X 2112123AC (psyche)
 
 ```
-Munch Rec
+Psyche Rec
 ```

@@ -5,5 +5,5 @@ if [ -d "$CLANG_DIR" ]; then
   git -C "$CLANG_DIR" pull
 else
   echo "Cloning Clang..."
-  git clone https://github.com/kdrag0n/proton-clang --depth=1 "$CLANG_DIR"
+  git clone https://github.com/Verevka/proton-clang --depth=1 "$CLANG_DIR"
 fi

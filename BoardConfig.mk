@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/munch
+DEVICE_PATH := device/xiaomi/psyche
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -47,7 +47,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 TARGET_2ND_CPU_VARIANT_RUNTIME := kryo585
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := munch
+TARGET_BOOTLOADER_BOARD_NAME := psyche
 TARGET_NO_BOOTLOADER := true
 
 # Crypto
@@ -55,6 +55,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
+TW_USE_FSCRYPT_POLICY := 2
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -91,8 +92,8 @@ BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
 # Kernel - Default to building from source
 # -----------------------------------------------------
-TARGET_KERNEL_SOURCE := kernel/xiaomi/munch
-TARGET_KERNEL_CONFIG := vendor/munch_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/psyche
+TARGET_KERNEL_CONFIG := psyche_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 KERNEL_SUPPORTS_LLVM_TOOLS := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
@@ -104,7 +105,7 @@ LLVM_IAS := 1
 # -----------------------------------------------------
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := munch,munch_global,munch_in
+TARGET_OTA_ASSERT_DEVICE := psyche,psyche_global,2112123AC
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -131,7 +132,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # (BOARD_SUPER_PARTITION_SIZE - 
 # Platform
 TARGET_BOARD_PLATFORM := kona
 TARGET_USES_UEFI := true
-PLATFORM_VERSION := 99.87.36
+PLATFORM_VERSION := 16
 PLATFORM_SECURITY_PATCH := 2127-12-31
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -152,7 +153,7 @@ TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := HDzungx
+TW_DEVICE_VERSION := Verevka
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -175,7 +176,6 @@ TW_EXCLUDE_APEX := true
 TW_FRAMERATE := 120
 TW_FORCE_KEYMASTER_VER := true
 TW_INCLUDE_FASTBOOTD := true
-USE_QTI_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 # Verified Boot

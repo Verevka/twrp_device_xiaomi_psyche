@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_munch.mk
+    $(LOCAL_DIR)/twrp_psyche.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_munch-user \
-    twrp_munch-userdebug \
-    twrp_munch-eng
+    twrp_psyche-user \
+    twrp_psyche-userdebug \
+    twrp_psyche-eng

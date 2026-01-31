@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.xiaomi_munch",
+    name: "libgptutils.xiaomi_sm8250",
     vendor: true,
     recovery_available: true,
     shared_libs: [
@@ -27,6 +27,7 @@ cc_library {
     cflags: [
         "-Wall",
         "-Werror",
+        "-Wno-unused-parameter",
     ],
     srcs: [
         "gpt-utils.cpp",

@@ -5,21 +5,21 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/xiaomi/munch
+LOCAL_PATH := device/xiaomi/psyche
 
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Configure gsi_keys.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Configure Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-	$(LOCAL_PATH) \
-	vendor/qcom/opensource/commonsys-intf/display
+# SHIPPING API
+PRODUCT_SHIPPING_API_LEVEL := 30
+# VNDK API
+PRODUCT_TARGET_VNDK_VERSION := 31
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -56,17 +56,3 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Recovery libs
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libion \
-    vendor.display.config@1.0 \
-    vendor.display.config@2.0 \
-
-RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
-    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
-
-
-# Vibrator
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)

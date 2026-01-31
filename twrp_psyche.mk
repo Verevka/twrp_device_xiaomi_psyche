@@ -12,13 +12,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Omni stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from munch device
-$(call inherit-product, device/xiaomi/munch/device.mk)
+# Inherit from psyche device
+$(call inherit-product, device/xiaomi/psyche/device.mk)
 
-PRODUCT_DEVICE := munch
-PRODUCT_NAME := twrp_munch
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := 22021211RC
+PRODUCT_DEVICE := psyche
+PRODUCT_NAME := twrp_psyche
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := 2112123AC
 PRODUCT_MANUFACTURER := xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
