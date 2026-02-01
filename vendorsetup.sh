@@ -35,7 +35,7 @@ if [ -d "$KERNEL_DIR" ]; then
   git -C "$KERNEL_DIR" pull
 else
   echo "Cloning kernel..."
-  git clone --recurse-submodules https://github.com/MistOS-psyche/kernel_xiaomi_sm8250.git -b aosp-16 "$KERNEL_DIR"
+  git clone https://github.com/AOSPA/android_kernel_xiaomi_sm8250.git -b uvite "$KERNEL_DIR"
 fi
 
 #set -o xtrace
