@@ -18,6 +18,26 @@
 # 	Please maintain this if you use this script or any part of it
 #
 
+CLANG_DIR="prebuilts/clang/host/linux-x86/clang-13.0.0"
+
+if [ -d "$CLANG_DIR" ]; then
+  echo "Updating Clang..."
+  git -C "$CLANG_DIR" pull
+else
+  echo "Cloning Clang..."
+  git clone https://github.com/Verevka/proton-clang --depth=1 "$CLANG_DIR"
+fi
+
+KERNEL_DIR="kernel/xiaomi/psyche"
+
+if [ -d "$KERNEL_DIR" ]; then
+  echo "Update kernel source..."
+  git -C "$KERNEL_DIR" pull
+else
+  echo "Cloning kernel..."
+  git clone --recurse-submodules https://github.com/MistOS-psyche/kernel_xiaomi_sm8250.git -b aosp-16 "$KERNEL_DIR"
+fi
+
 #set -o xtrace
 FDEVICE="psyche"
 THIS_DEVICE=${BASH_ARGV[2]}
