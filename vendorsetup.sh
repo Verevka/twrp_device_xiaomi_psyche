@@ -83,7 +83,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_DATE_BINARY=1
     	export FOX_DELETE_AROMAFM=1
 	export TARGET_DEVICE_ALT="psyche,psyche_global,2112123AC"
-	export OF_MAINTAINER="Verevka"
+	export OF_MAINTAINER=Verevka
 	export FOX_BUILD_DEVICE=Psyche
 
 	export FOX_USE_FSCK_EROFS_BINARY=1
