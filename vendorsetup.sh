@@ -19,7 +19,7 @@
 #
 
 #set -o xtrace
-FDEVICE="alioth"
+FDEVICE="psyche"
 THIS_DEVICE=${BASH_ARGV[2]}
 
 fox_get_target_device() {
@@ -32,7 +32,7 @@ local chkdev=$(echo "$BASH_SOURCE" | grep -w \"$FDEVICE\")
    fi
 }
 
-if [ "$THIS_DEVICE" = "alioth" -o "$THIS_DEVICE" = "munch" ]; then
+if [ "$THIS_DEVICE" = "psyche" -o "$THIS_DEVICE" = "munch" ]; then
 	FDEVICE="$THIS_DEVICE"
 	[ -z "$FOX_BUILD_DEVICE" ] && FOX_BUILD_DEVICE="$THIS_DEVICE"
 fi
@@ -62,7 +62,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_ZSTD_BINARY=1
 	export FOX_USE_DATE_BINARY=1
     	export FOX_DELETE_AROMAFM=1
-	export TARGET_DEVICE_ALT="aliothin,alioth"
+	export TARGET_DEVICE_ALT="psyche,psyche_global,2112123AC"
+	export OF_MAINTAINER="Verevka"
+	export FOX_BUILD_DEVICE=Psyche
 
 	export FOX_USE_FSCK_EROFS_BINARY=1
 	export FOX_USE_BUSYBOX_BINARY=1

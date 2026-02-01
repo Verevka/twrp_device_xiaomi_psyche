@@ -6,7 +6,7 @@
 #
 
 # Our various search paths for Soong namespaces
-MIKONA_SOONG_PATHS := device/xiaomi/alioth #device/xiaomi/sm8250-common # device/xiaomi/mikona device/xiaomi/munch
+MIKONA_SOONG_PATHS := device/xiaomi/psyche #device/xiaomi/sm8250-common # device/xiaomi/mikona device/xiaomi/munch
 
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -115,8 +115,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
 # OEM otacert
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/recovery/security/miui
+#PRODUCT_EXTRA_RECOVERY_KEYS += \
+#    vendor/recovery/security/miui
 
 # skip some snapshot stuff in update_engine
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -145,7 +145,7 @@ endif
 # end: vendor_boot
 
 #--------------------------
-# to work around a (hash verification) ROM flashing error caused by crDroid+NikGapps on alioth
+# to work around a (hash verification) ROM flashing error caused by crDroid+NikGapps on psyche
 # (see the edits in update_engine's payload_consumer/filesystem_verifier_action.cc -
 # ro.virtual_ab.skip_verify_source_hash=true)
 PRODUCT_PROPERTY_OVERRIDES += \

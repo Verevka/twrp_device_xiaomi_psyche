@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
-DEVICE_PATH := device/xiaomi/alioth
+DEVICE_PATH := device/xiaomi/psyche
 
 # Architecture
 TARGET_ARCH := arm64
@@ -29,7 +29,7 @@ TARGET_IS_64_BIT := true
 BOARD_VENDOR := xiaomi
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := alioth,aliothin
+TARGET_OTA_ASSERT_DEVICE := psyche,psyche_global,2112123AC
 
 # Platform
 PRODUCT_PLATFORM := kona
@@ -85,7 +85,7 @@ KERNEL_PATH := $(DEVICE_PATH)/prebuilt
 # whether to do an inline build of the kernel sources [broken for vendor_boot targets]
 ifeq ($(FOX_BUILD_FULL_KERNEL_SOURCES),1)
     TARGET_KERNEL_SOURCE := kernel/xiaomi/$(PRODUCT_RELEASE_NAME)
-    TARGET_KERNEL_CONFIG := vendor/$(PRODUCT_RELEASE_NAME)-fox_defconfig
+    TARGET_KERNEL_CONFIG := psyche_defconfig
     TARGET_KERNEL_CLANG_COMPILE := true
     KERNEL_SUPPORTS_LLVM_TOOLS := true
     TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
@@ -151,6 +151,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true # may not really be needed
 
 # Configuration
+TW_DEVICE_VERSION := Verevka
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true

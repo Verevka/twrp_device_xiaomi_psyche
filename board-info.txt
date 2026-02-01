@@ -1,2 +1,2 @@
-require board=alioth|aliothin
+require board=psyche|psyche_global|2112123AC
 
