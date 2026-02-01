@@ -115,8 +115,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
 # OEM otacert
-#PRODUCT_EXTRA_RECOVERY_KEYS += \
-#    vendor/recovery/security/miui
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(DEVICE_PATH)/security/miui_releasekey
 
 # skip some snapshot stuff in update_engine
 PRODUCT_PROPERTY_OVERRIDES += \
